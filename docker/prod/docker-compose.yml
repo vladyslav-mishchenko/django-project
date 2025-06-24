@@ -1,0 +1,38 @@
+services:
+  nginx:
+    build:
+      context: ../../
+      dockerfile: docker/prod/nginx.Dockerfile
+    image: django-project-nginx:latest
+    container_name: django-project-nginx
+    volumes:
+      - django_project_staticfiles:/app/staticfiles:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - django
+
+  django:
+    build:
+      context: ../../
+      dockerfile: docker/prod/django.Dockerfile
+    image: django-project:latest
+    container_name: django-project
+    volumes:
+      - django_project_staticfiles:/app/staticfiles
+    depends_on:
+      - postgres
+  
+  postgres:
+    build:
+      context: ../../
+      dockerfile: docker/prod/postgres.Dockerfile
+    image: django-project-postgres:latest
+    container_name: django-project-postgres
+    restart: always
+    volumes:
+      - django_project_pg-data:/var/lib/postgresql/data/
+
+volumes:
+  django_project_staticfiles:
+  django_project_pg-data:

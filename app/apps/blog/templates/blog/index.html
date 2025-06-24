@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block content %}
+<ul>
+    <li><a href="{% url 'blog:index' %}">Blog</a></li>
+    <li><a href="{% url 'blog:category-list' %}">Categories</a></li>
+    <li><a href="{% url 'blog:post-list' %}">Posts</a></li>
+</ul>
+
+<ul>
+    {% for category in categories %}
+    <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<div>
+    {% for post in posts %}
+        <div>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            <div>{{ post.excerpt }}</div>
+            <div><a href="{{ post.category.get_absolute_url }}">{{ post.category.name }}</a></div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body class="body">
+    <div class="website">
+        <header class="header-fixed">
+            <div class="container">
+                <div class="g header">
+                    <div class="container">
+                        <a href="{% url 'pages:home' %}">Home</a>
+                        <a href="{% url 'pages:about' %}">About</a>
+                        <a href="{% url 'blog:index' %}">Blog</a>
+                        <a href="{% url 'pages:contacts' %}">Contacts</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer class="g footer">
+            <div class="container">
+                <div>footer</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+</html>
