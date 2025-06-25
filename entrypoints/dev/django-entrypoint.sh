@@ -9,7 +9,7 @@ if [ -f "manage.py" ]; then
     python "manage.py" migrate
 
     # superuser
-    python "manage.py" createsuperuser --noinput
+    # python "manage.py" createsuperuser --noinput
 
     # collectstatic
     # python "manage.py" collectstatic --noinput

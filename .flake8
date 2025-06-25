@@ -3,3 +3,7 @@ max-line-length = 88
 exclude =
     migrations,
     __pycache__,
+    app/config/settings/base.py
+per-file-ignores =
+    app/config/settings/dev.py: F403, F405
+    app/config/settings/prod.py: F403, F405
