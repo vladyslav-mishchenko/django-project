@@ -14,12 +14,12 @@
           <div class='header g'>
             <div class='container'>
               <div class="g-header">
-                <a href="/" class="logo-link">Django</a>
+                <a href="{% url 'home:home' %}" class="logo-link">Django</a>
                 <div class="nav">
                   <nav class="main-menu">
                     <ul class="main-nav">
                       <li class="item">
-                        <a href="{% url 'pages:about' %}" class="link">About</a>
+                        <a href="{% url 'pages:page-detail' page_slug='about' %}" class="link">About</a>
                       </li>
 
                       <li class="item">
@@ -27,7 +27,7 @@
                       </li>
       
                       <li class="item">
-                        <a href="{% url 'pages:contacts' %}" class="link">Contact</a>
+                        <a href="{% url 'pages:page-detail' page_slug='contacts' %}" class="link">Contacts</a>
                       </li>
                     </ul>
                   </nav>

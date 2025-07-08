@@ -8,6 +8,8 @@ from .models import Category, Post
 def index(request):
     template = "blog/index.html"
 
+    print(template)
+
     posts = Post.objects.filter(is_published=True).order_by("-publish_date")
     categories = Category.objects.filter(is_active=True).order_by("name")
 

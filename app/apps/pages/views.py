@@ -5,37 +5,10 @@ from django.shortcuts import (
 from .models import Page
 
 
-def home(request):
-    slug = "home"
-    template = "pages/home.html"
+def page_detail(request, page_slug):
 
-    page = get_object_or_404(Page, slug=slug, is_published=True)
-
-    context = {
-        "page": page,
-    }
-
-    return render(request, template, context)
-
-
-def about(request):
-    slug = "about"
-    template = "pages/about.html"
-
-    page = get_object_or_404(Page, slug=slug, is_published=True)
-
-    context = {
-        "page": page,
-    }
-
-    return render(request, template, context)
-
-
-def contacts(request):
-    slug = "contacts"
-    template = "pages/contacts.html"
-
-    page = get_object_or_404(Page, slug=slug, is_published=True)
+    page = get_object_or_404(Page, slug=page_slug, is_published=True)
+    template = f"pages/{page.template}.html"
 
     context = {
         "page": page,

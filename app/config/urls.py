@@ -23,8 +23,9 @@ from django.urls import (
 from apps.errors import views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("", include("apps.home.urls")),
     path("blog/", include("apps.blog.urls")),
+    path("admin/", admin.site.urls),
     path("", include("apps.pages.urls")),
 ]
 
