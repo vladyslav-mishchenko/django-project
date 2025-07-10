@@ -1,4 +1,5 @@
 {% load static %}
+{% load menu_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,7 +18,8 @@
                 <a href="{% url 'home:home' %}" class="logo-link">Django</a>
                 <div class="nav">
                   <nav class="main-menu">
-                    <ul class="main-nav">
+                    
+                    {% comment %} <ul class="main-nav">
                       <li class="item">
                         <a href="{% url 'pages:page-detail' page_slug='about' %}" class="link">About</a>
                       </li>
@@ -29,7 +31,10 @@
                       <li class="item">
                         <a href="{% url 'pages:page-detail' page_slug='contacts' %}" class="link">Contacts</a>
                       </li>
-                    </ul>
+                    </ul> {% endcomment %}
+
+                    {% render_menu "main" %}
+
                   </nav>
                 </div>
               </div>
@@ -46,7 +51,7 @@
         <div class='container'>
           <div class="g-footer">
             <div class="copyright">
-              <span class="footer-copyright">&copy; 2025 vmdev</span>
+              <span class="footer-copyright">&copy; 2025 Django</span>
             </div>
           </div>
         </div>

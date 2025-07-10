@@ -1,0 +1,9 @@
+<ul class="main-nav {{ menu_slug }}">
+  {% for item in menu_items %}
+    <li class="item {% if request.path == item.url %}active{% endif %}">
+      <a class="link" href="{{ item.url }}">{{ item.title }}</a>
+    </li>
+  {% empty %}
+    <li>No menu items found.</li>
+  {% endfor %}
+</ul>
