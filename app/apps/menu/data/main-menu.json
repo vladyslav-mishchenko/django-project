@@ -1,0 +1,21 @@
+{
+  "name": "Main Menu",
+  "slug": "main",
+  "items": [
+    {
+      "title": "About",
+      "url": "/about/",
+      "order": 1
+    },
+    {
+      "title": "Blog",
+      "url": "/blog/",
+      "order": 2
+    },
+    {
+      "title": "Contacts",
+      "url": "/contacts/",
+      "order": 3
+    }
+  ]
+}

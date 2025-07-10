@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-<ul>
+{% comment %} <ul>
     {% for category in categories %}
      <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
     {% endfor %}
-</ul>
+</ul> {% endcomment %}
 
 <ul>
     {% for category in categories %}

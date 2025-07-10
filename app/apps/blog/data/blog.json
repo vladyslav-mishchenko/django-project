@@ -1,0 +1,41 @@
+{
+  "categories": [
+    { "name": "News", "slug": "news" },
+    { "name": "Freelance", "slug": "freelance" }
+  ],
+  
+  "posts": [
+    {
+      "title": "post 1",
+      "slug": "post-1",
+      "content": "1",
+      "category_slug": "news",
+      "publish_date": "2024-01-01T10:00:00Z",
+      "is_published": true
+    },
+    {
+      "title": "post 2",
+      "slug": "post-2",
+      "content": "2",
+      "category_slug": "freelance",
+      "publish_date": "2024-01-02T12:00:00Z",
+      "is_published": true
+    },
+    {
+      "title": "post 3",
+      "slug": "post-3",
+      "content": "3",
+      "category_slug": "news",
+      "publish_date": "2024-02-01T10:00:00Z",
+      "is_published": true
+    },
+    {
+      "title": "post 4",
+      "slug": "post-4",
+      "content": "4",
+      "category_slug": "freelance",
+      "publish_date": "2024-04-02T12:00:00Z",
+      "is_published": true
+    }
+  ]
+}

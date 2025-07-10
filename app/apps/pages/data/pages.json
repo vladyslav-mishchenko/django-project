@@ -1,0 +1,12 @@
+[
+    {
+        "title": "About",
+        "slug": "about",
+        "content": "About Page"
+    },
+    {
+        "title": "Contacts",
+        "slug": "contacts",
+        "content": "Contacts Page"
+    }
+]
