@@ -32,6 +32,8 @@ services:
     restart: always
     volumes:
       - django_project_pg-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
 
 volumes:
   django_project_staticfiles:

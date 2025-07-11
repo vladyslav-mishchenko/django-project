@@ -1,20 +1,32 @@
 {
-  "name": "Main Menu",
-  "slug": "main",
+  "menus": [
+    { 
+      "name": "MainMenu", 
+      "slug": "main" 
+    },
+    { 
+      "name": "FooterMenu", 
+      "slug": "footer-menu" 
+    }
+  ],
+
   "items": [
     {
       "title": "About",
       "url": "/about/",
+      "menu_slug": "main",
       "order": 1
     },
     {
       "title": "Blog",
       "url": "/blog/",
+      "menu_slug": "main",
       "order": 2
     },
     {
       "title": "Contacts",
       "url": "/contacts/",
+      "menu_slug": "main",
       "order": 3
     }
   ]

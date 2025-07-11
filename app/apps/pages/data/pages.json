@@ -2,11 +2,13 @@
     {
         "title": "About",
         "slug": "about",
-        "content": "About Page"
+        "content": "About Page",
+        "template": "about"
     },
     {
         "title": "Contacts",
         "slug": "contacts",
-        "content": "Contacts Page"
+        "content": "Contacts Page",
+        "template": "contacts"
     }
 ]

@@ -15,7 +15,6 @@ class Command(BaseDataLoaderCommand):
         )
 
     def load_items(self, data):
-        # Load categories
         categories = {}
         for cat in data.get("categories", []):
             category, _ = Category.objects.update_or_create(
@@ -24,7 +23,6 @@ class Command(BaseDataLoaderCommand):
             categories[cat["slug"]] = category
             self.stdout.write(f"Category: {category.name}")
 
-        # Load posts
         for post in data.get("posts", []):
             category = categories.get(post["category_slug"])
             if not category:

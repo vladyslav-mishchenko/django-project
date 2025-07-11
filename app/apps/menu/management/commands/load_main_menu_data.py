@@ -16,22 +16,29 @@ class Command(BaseDataLoaderCommand):
         )
 
     def load_items(self, data):
-        # data is a dict representing one menu
-        menu, created = Menu.objects.update_or_create(
-            slug=data["slug"], defaults={"name": data["name"]}
-        )
-        self.stdout.write(f"{'Created' if created else 'Updated'} menu: {menu.name}")
+        menus = {}
 
-        # Clear existing items (optional)
-        menu.items.all().delete()
-
-        # Add items in order
-        items = data.get("items", [])
-        for item_data in items:
-            menu_item = MenuItem.objects.create(
-                menu=menu,
-                title=item_data["title"],
-                url=item_data["url"],
-                order=item_data.get("order", 0),
+        for menu in data.get("menus", []):
+            menu_object, _ = Menu.objects.update_or_create(
+                slug=menu["slug"], defaults={"name": menu["name"]}
             )
-            self.stdout.write(f"  Added menu item: {menu_item.title}")
+            menus[menu["slug"]] = menu_object
+            self.stdout.write(f"Category: {menu_object.name}")
+
+        for item in data.get("items", []):
+            menu = menus.get(item["menu_slug"])
+            if not menu:
+                self.stderr.write(f"Warning: Menu '{item['menu_slug']}' not found.")
+                continue
+
+            menu_object, created = MenuItem.objects.update_or_create(
+                title="title",
+                defaults={
+                    "title": item["title"],
+                    "url": item["url"],
+                    "order": item["order"],
+                    "menu": menu,
+                },
+            )
+            action = "Created" if created else "Updated"
+            self.stdout.write(f"{action} menu: {menu_object.title}")

@@ -13,10 +13,15 @@ if [ -f "manage.py" ]; then
     python "manage.py" migrate
 
     # superuser
-    # python "manage.py" createsuperuser --noinput
+    python "manage.py" createsuperuser --noinput
 
     # collectstatic
     python "manage.py" collectstatic --noinput
+
+    # Load data
+    python manage.py load_pages_data || echo "Failed to load pages data"
+    python manage.py load_main_menu_data || echo "Failed to load menu data"
+    python manage.py load_blog_data || echo "Failed to load blog data"
 
     # runserver    
     gunicorn config.wsgi:application \

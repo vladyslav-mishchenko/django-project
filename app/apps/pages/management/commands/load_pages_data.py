@@ -17,7 +17,11 @@ class Command(BaseDataLoaderCommand):
         for item in data:
             page, created = Page.objects.update_or_create(
                 slug=item["slug"],
-                defaults={"title": item["title"], "content": item["content"]},
+                defaults={
+                    "title": item["title"],
+                    "content": item["content"],
+                    "template": item["template"],
+                },
             )
             action = "Created" if created else "Updated"
             self.stdout.write(f"{action} page: {page.title}")
