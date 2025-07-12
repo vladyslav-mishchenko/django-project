@@ -32,7 +32,7 @@ class Command(BaseDataLoaderCommand):
                 continue
 
             menu_object, created = MenuItem.objects.update_or_create(
-                title="title",
+                url=item["url"],
                 defaults={
                     "title": item["title"],
                     "url": item["url"],

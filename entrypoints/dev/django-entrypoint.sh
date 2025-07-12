@@ -16,7 +16,7 @@ if [ -f "manage.py" ]; then
 
     # Load data
     python manage.py load_pages_data || echo "Failed to load pages data"
-    python manage.py load_main_menu_data || echo "Failed to load menu data"
+    python manage.py load_menu_data || echo "Failed to load menu data"
     python manage.py load_blog_data || echo "Failed to load blog data"
 
     # runserver
