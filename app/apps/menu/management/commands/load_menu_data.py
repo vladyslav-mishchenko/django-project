@@ -31,7 +31,7 @@ class Command(BaseDataLoaderCommand):
                 self.stderr.write(f"Warning: Menu '{item['menu_slug']}' not found.")
                 continue
 
-            menu_object, created = MenuItem.objects.update_or_create(
+            menu_item_object, created = MenuItem.objects.update_or_create(
                 url=item["url"],
                 defaults={
                     "title": item["title"],
@@ -41,4 +41,4 @@ class Command(BaseDataLoaderCommand):
                 },
             )
             action = "Created" if created else "Updated"
-            self.stdout.write(f"{action} menu: {menu_object.title}")
+            self.stdout.write(f"{action} menu: {menu_item_object.title}")

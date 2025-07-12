@@ -16,12 +16,12 @@ class Command(BaseDataLoaderCommand):
 
     def load_items(self, data):
         categories = {}
-        for cat in data.get("categories", []):
-            category, _ = Category.objects.update_or_create(
-                slug=cat["slug"], defaults={"name": cat["name"]}
+        for category in data.get("categories", []):
+            category_object, _ = Category.objects.update_or_create(
+                slug=category["slug"], defaults={"name": category["name"]}
             )
-            categories[cat["slug"]] = category
-            self.stdout.write(f"Category: {category.name}")
+            categories[category["slug"]] = category_object
+            self.stdout.write(f"Category: {category_object.name}")
 
         for post in data.get("posts", []):
             category = categories.get(post["category_slug"])
@@ -31,7 +31,7 @@ class Command(BaseDataLoaderCommand):
                 )
                 continue
 
-            post_obj, created = Post.objects.update_or_create(
+            post_object, created = Post.objects.update_or_create(
                 slug=post["slug"],
                 defaults={
                     "title": post["title"],
@@ -42,4 +42,4 @@ class Command(BaseDataLoaderCommand):
                 },
             )
             action = "Created" if created else "Updated"
-            self.stdout.write(f"{action} post: {post_obj.title}")
+            self.stdout.write(f"{action} post: {post_object.title}")
