@@ -2,7 +2,7 @@
   "menus": [
     { 
       "name": "MainMenu", 
-      "slug": "main" 
+      "slug": "main-menu" 
     },
     { 
       "name": "FooterMenu", 
@@ -14,19 +14,19 @@
     {
       "title": "About",
       "url": "/about/",
-      "menu_slug": "main",
+      "menu_slug": "main-menu",
       "order": 1
     },
     {
       "title": "Blog",
       "url": "/blog/",
-      "menu_slug": "main",
+      "menu_slug": "main-menu",
       "order": 2
     },
     {
       "title": "Contacts",
       "url": "/contacts/",
-      "menu_slug": "main",
+      "menu_slug": "main-menu",
       "order": 3
     }
   ]

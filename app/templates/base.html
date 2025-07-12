@@ -19,21 +19,7 @@
                 <div class="nav">
                   <nav class="main-menu">
                     
-                    {% comment %} <ul class="main-nav">
-                      <li class="item">
-                        <a href="{% url 'pages:page-detail' page_slug='about' %}" class="link">About</a>
-                      </li>
-
-                      <li class="item">
-                        <a href="{% url 'blog:index' %}" class="link">Blog</a>
-                      </li>
-      
-                      <li class="item">
-                        <a href="{% url 'pages:page-detail' page_slug='contacts' %}" class="link">Contacts</a>
-                      </li>
-                    </ul> {% endcomment %}
-
-                    {% render_menu "main" %}
+                    {% render_menu "main-menu" %}
 
                   </nav>
                 </div>

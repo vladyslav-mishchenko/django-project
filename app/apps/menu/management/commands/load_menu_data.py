@@ -12,7 +12,7 @@ class Command(BaseDataLoaderCommand):
     def __init__(self):
         super().__init__()
         self.data_file = os.path.join(
-            settings.BASE_DIR, "apps", "menu", "data", "main-menu.json"
+            settings.BASE_DIR, "apps", "menu", "data", "menu.json"
         )
 
     def load_items(self, data):
