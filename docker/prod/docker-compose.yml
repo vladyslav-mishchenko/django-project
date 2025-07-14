@@ -7,6 +7,7 @@ services:
     container_name: django-project-nginx
     volumes:
       - django_project_staticfiles:/app/staticfiles:ro
+      - django_project_media:/app/media:ro
     ports:
       - "80:80"
     depends_on:
@@ -20,6 +21,7 @@ services:
     container_name: django-project
     volumes:
       - django_project_staticfiles:/app/staticfiles
+      - django_project_media:/app/media
     depends_on:
       - postgres
   
@@ -37,4 +39,5 @@ services:
 
 volumes:
   django_project_staticfiles:
+  django_project_media:
   django_project_pg-data:

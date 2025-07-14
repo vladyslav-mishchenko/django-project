@@ -42,6 +42,9 @@ USER $USERNAME
 RUN sudo mkdir -p /app/staticfiles
 RUN sudo chown -R $USERNAME:$USERNAME /app
 
+RUN sudo mkdir -p /app/media
+RUN sudo chown -R $USERNAME:$USERNAME /app/media
+
 ENTRYPOINT ["/usr/local/bin/entrypoints/django-entrypoint.sh"]
 
 EXPOSE 8000
