@@ -20,6 +20,11 @@ from django.urls import (
     path,
     include,
 )
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView,
+)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,8 +34,14 @@ urlpatterns = [
     path("", include("apps.home.urls")),
     path("blog/", include("apps.blog.urls")),
     path("admin/", admin.site.urls),
-    path("", include("apps.pages.urls")),
+    # path("", include("apps.pages.urls")),
 ]
+
+# apidocs
+urlpatterns += [path("api/", include("apps.apidocs.urls"))]
+
+# pages
+urlpatterns += [path("", include("apps.pages.urls"))]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
