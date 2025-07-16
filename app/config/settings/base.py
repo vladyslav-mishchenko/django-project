@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "apps.blog",
     "apps.users",
     "apps.menu",
+    "apps.messaging",
     "apps.errors",
 ]
 

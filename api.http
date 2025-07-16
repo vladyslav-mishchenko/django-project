@@ -1,0 +1,8 @@
+POST http://localhost:8000/api/contact/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Megalodon",
+    "email": "email@example.com",
+    "message": "Otodus megalodon, commonly known as megalodon, is an extinct species of giant mackerel shark that lived approximately 23 to 3.6 million years ago, from the Early Miocene to the Early Pliocene epochs. O. megalodon was formerly thought to be a member of the family Lamnidae and a close relative of the great white shark, but has been reclassified into the extinct family Otodontidae, which diverged from the great white shark during the Early Cretaceous"
+}

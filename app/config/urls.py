@@ -40,6 +40,9 @@ urlpatterns = [
 # apidocs
 urlpatterns += [path("api/", include("apps.apidocs.urls"))]
 
+# messaging
+urlpatterns += [path("api/", include("apps.messaging.urls"))]
+
 # pages
 urlpatterns += [path("", include("apps.pages.urls"))]
 
