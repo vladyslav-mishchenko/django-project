@@ -4,7 +4,7 @@ from .models import Menu, MenuItem
 
 class MenuItemInline(admin.TabularInline):
     model = MenuItem
-    fields = ("name", "url", "order")
+    fields = ("title", "url", "order")
     extra = 1
     ordering = ("order",)
 
