@@ -1,10 +1,7 @@
 FROM python:3.10
 
 # Python runtime environment variables
-
-# ENV PYTHONDONTWRITEBYTECODE=0
 ENV PYTHONDONTWRITEBYTECODE=1
-
 ENV PYTHONUNBUFFERED=1
 
 # requirements
